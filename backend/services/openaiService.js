@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 // Load environment variables
 dotenv.config();
 console.log(process.env.GEMINI_API_KEY)
-const ai = new GoogleGenAI({ apiKey: "AIzaSyAIKsyVQQvFJ4xC1310MhRe15VqW2ctYw4" });
+const ai = new GoogleGenAI(process.env.GEMINI_API_KEY);
 
 export const openaiService = {
   generateContent: async (promptTemplate, variables) => {
